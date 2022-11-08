@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/AdvancedStorage.sol": {
+      "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.9;\n\ncontract AdvancedStorage {\n    uint256[] public ids;\n\n    function add(uint256 _id) public {\n        ids.push(_id);\n    }\n\n    function get(uint256 _index) public view returns (uint256) {\n        return ids[_index];\n    }\n\n    function getAll() public view returns (uint256[] memory) {\n        return ids;\n    }\n\n    function length() public view returns (uint256) {\n        return ids.length;\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
